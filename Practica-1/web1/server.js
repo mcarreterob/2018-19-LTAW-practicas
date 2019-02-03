@@ -9,10 +9,10 @@ http.createServer(function (req, res) {
   var filename = "." + q.pathname;
   fs.readFile(filename, function(err, data){
     if (err) {
-      res.writeHead(404, {'Content_Type': 'text/html'; 'text/css'});
+      res.writeHead(404, {'Content_Type': 'text/html'});
       return res.end("404 Not Found");
     }
-    res.writeHead(200, {'Content-Type': 'text/html; text/css'});
+    res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
     return res.end();
     console.log("Peticion atendida")
