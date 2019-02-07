@@ -15,8 +15,8 @@ http.createServer((req, res) => {
       return res.end("404 Not Found");
     }
     res.write(data);
-    return res.end();
     console.log("Peticion atendida");
+    return res.end();
   });
 }).listen(8080);
 /*
