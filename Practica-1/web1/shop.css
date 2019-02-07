@@ -1,0 +1,61 @@
+/* NAVIGATION BAR */
+ul {
+  font-family: 'Ruthie';font-size: 40px;
+  list-style-type: none;
+  margin-left: 36.5%;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  text-align: center;
+}
+
+li {
+  display: block;
+  text-align: center;
+  padding: 0px 40px;
+  text-decoration: none;
+}
+
+li:hover:not(.active) {
+  text-shadow: 3px 3px 17px white;
+}
+/* END NAVIGATION BAR */
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: violet;
+}
+
+body {
+  font-family: 'Jockey One';font-size: 30px;
+  color: white;
+  text-shadow: 3px 3px 17px black;
+  background-image: url("red-background.png");
+  background-position: top;
+  background-size: 1920px 1200px;
+}
+
+table, th, td {
+  /*border: 1px solid white;*/
+  border-collapse: collapse;
+}
+
+.header {
+  font-family: 'Mr Dafoe';
+  text-align: center;
+  color: white;
+  font-size: 45px;
+}
