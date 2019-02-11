@@ -6,16 +6,44 @@ console.log("Arrancando servidor...")
 
 http.createServer((req, res) => {
   console.log("---> Peticion recibida");
+  console.log("Recurso solicitado (URL): " + req.url);
   var q = url.parse(req.url, true);
-  var filename = "." + q.pathname;
+  console.log("pathname: " + q.pathname);
+
+  var filename = "";
+
+  if (q.pathname == "/"){
+     filename += "/index.html"
+  }else{
+     filename = q.pathname
+  }
+
+  tipo = filename.split(".")[1];
+  filename = "." + filename
+
+  console.log("Filename: " + filename);
+  console.log("Tipo: " + tipo);
+  console.log();
+
   fs.readFile(filename, function(err, data){
-    console.log("Recurso solicitado (URL): " + req.url);
     if (err) {
       res.writeHead(404, {'Content_Type': 'text/html'});
       return res.end("404 Not Found");
     }
+
+    mime = "text/html"
+
+    if(['png', 'jpg'].includes(tipo)){
+      mime = "image/" + tipo
+    }
+
+    if(tipo == "css"){
+      mime = "text/css"
+    }
+
     res.write(data);
     console.log("Peticion atendida");
+    console.log();
     return res.end();
   });
 }).listen(8080);
