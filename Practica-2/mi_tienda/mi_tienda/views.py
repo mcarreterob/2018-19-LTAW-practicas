@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from django.template.loader import get_template
 from django.template import Template, Context
+from django.shortcuts import render
 
 def mi_funcion(request):
    html = "Hola! Esto es una prueba"
@@ -8,7 +10,7 @@ def mi_funcion(request):
 
 def mi_producto(request, param):
     numero = int(param)
-    html = "Acceso al producto: %i" & numero
+    html = "Acceso al producto: %i" % numero;
     return HttpResponse(html)
 
 PLANTILLA = """
@@ -30,3 +32,6 @@ def saludo(request):
 
     html = t.render(c)
     return HttpResponse(html)
+
+def index(request):
+    return render(request, 'main.html', {'user':'Obijuan'})
