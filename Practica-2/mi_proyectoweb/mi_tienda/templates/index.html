@@ -1,17 +1,28 @@
-{% load staticfiles %}
-
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
-    <title>MI TIENDA</title>
-    <link rel="stylesheet" href="{% static 'mi-css.css'%}">
-     <script src="{% static 'mi-js.js' %}"></script>
+    <title>Home</title>
+    <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="shop.css">
   </head>
-  <body onload="main();">
-    <p>BIENVENIDO A MI TIENDA con estilo y js</p>
-    <img src="/static/logo-urjc.png" alt="NOPE" id="logo">
-    <br>
-    <button type="button" id="boton">Click me</button>
+  <body>
+    <div class="header">
+      <a href="./index.html" style="text-decoration:none; color:white"><h1>-Static Shop-</h1></a>
+    </div>
+    <ul>
+      <a href="./libros.html" style="text-decoration:none; color:white"><li>Libros</li></a>
+      <a href="./discos.html" style="text-decoration:none; color:white"><li>Discos</li></a>
+      <a href="./zapatillas.html" style="text-decoration:none; color:white"><li>Zapatillas</li></a>
+    </ul><br>
+    <table style="width:100%;text-align:center">
+      <tr>
+        <td><a href="./disco1.html"><img src="Lebron.jpg" alt="Lebron" width="400" height="400" style="float:center"><br>Toteking - Lebron</a></td>
+        <td><a href="./libro1.html"><img src="metamorfosis.jpg" alt="metamorfosis" width="333" height="503" style="float:center"><br>Franz Kafka - La metamorfosis</a></td>
+        <td><a href="./zapa1.html"><img src="Jordan11Concord.png" alt="Concord" width="427" height="258" style="float:center"><br>Air Jordan XI Concord</a></td>
+      </tr>
+    </table>
   </body>
 </html>
