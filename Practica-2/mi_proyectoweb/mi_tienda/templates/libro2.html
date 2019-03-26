@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,8 +21,8 @@
     </ul>
     <table style="width:60%;text-align:center; margin-left:400px">
       <tr>
-        <td><img src="teriyaki.jpg" alt="teriyaki" width="460" height="429" style="float:center"><br>
-          <p style="font-size:50px">19€   <img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></p></td>
+        <td><img src="{% static 'teriyaki.JPG'%}" alt="teriyaki" width="460" height="429" style="float:center"><br>
+          <p style="font-size:50px">19€   <img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></p></td>
         <td><p style="font-size:23px; margin-left:70px; margin-bottom:200px">Daniel Rivas, también conocido como Teriyaki Donut
           presenta una guia sobre la historia de las Nike Air Jordans y todas las zapatillas que MJ llevó con Chicago Bulls.
           Incluyendo toda la información interesante sobre el diseño y los momentos que hicieron a Michael la leyenda.<br><br>

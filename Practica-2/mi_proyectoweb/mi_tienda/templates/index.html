@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,9 +21,9 @@
     </ul><br>
     <table style="width:100%;text-align:center">
       <tr>
-        <td><a href="./disco1.html"><img src="Lebron.jpg" alt="Lebron" width="400" height="400" style="float:center"><br>Toteking - Lebron</a></td>
-        <td><a href="./libro1.html"><img src="metamorfosis.jpg" alt="metamorfosis" width="333" height="503" style="float:center"><br>Franz Kafka - La metamorfosis</a></td>
-        <td><a href="./zapa1.html"><img src="Jordan11Concord.png" alt="Concord" width="427" height="258" style="float:center"><br>Air Jordan XI Concord</a></td>
+        <td><a href="./disco1.html"><img src="{% static 'Lebron.jpg'%}" alt="Lebron" width="400" height="400" style="float:center"><br>Toteking - Lebron</a></td>
+        <td><a href="./libro1.html"><img src="{% static 'metamorfosis.jpg'%}" alt="metamorfosis" width="333" height="503" style="float:center"><br>Franz Kafka - La metamorfosis</a></td>
+        <td><a href="./zapa1.html"><img src="{% static 'Jordan11Concord.png'%}" alt="Concord" width="427" height="258" style="float:center"><br>Air Jordan XI Concord</a></td>
       </tr>
     </table>
   </body>

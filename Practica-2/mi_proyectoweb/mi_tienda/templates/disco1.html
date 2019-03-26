@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,8 +21,8 @@
     </ul>
     <table style="width:80%;text-align:center; margin-left:100px">
       <tr>
-        <td><img src="Lebron.jpg" alt="Lebron" width="450" height="450" style="float:center">
-          <p style="font-size:50px">14,50€   <img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></p></td>
+        <td><img src="{% static 'Lebron.jpg'%}" alt="Lebron" width="450" height="450" style="float:center">
+          <p style="font-size:50px">14,50€   <img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></p></td>
         <td><p style="font-size:20px; margin-left:30px">Lebron es, sin duda, su álbum más especial. En Lebron
           encontramos nuevas fórmulas junto al TOTE de siempre, pero con la madurez que sólo la experiencia
           puede proporcionar. Es el caso de Puzzle, Ellas o Nada Es Seguro. TOTEKING se abre paso con maestría,
@@ -34,7 +36,7 @@
           06.Nada es seguro<br>
           07.Bartleby & co.
             <audio controls>
-              <source src="Bartleby&Co.mp3" type="audio/mpeg">
+              <source src="{% static 'Bartleby&Co.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           08.Peligroso<br>
@@ -42,12 +44,12 @@
           10.Interludio OSR - Lebron<br>
           11.Gente tóxica con Rozalén
             <audio controls>
-              <source src="GenteToxica.mp3" type="audio/mpeg">
+              <source src="{% static 'GenteToxica.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           12.Mi colega
             <audio controls>
-              <source src="MiColega.mp3" type="audio/mpeg">
+              <source src="{% static 'MiColega.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           13.Tonto con Shotta y Andreas Lutz<br>

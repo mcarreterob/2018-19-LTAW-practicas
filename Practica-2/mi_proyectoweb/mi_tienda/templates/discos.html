@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,22 +21,22 @@
     </ul>
     <table style="width:95%;text-align:center">
       <tr>
-        <td><img src="Lebron.jpg" alt="Lebron" width="200" height="200" style="float:center"></td>
+        <td><img src="{% static 'Lebron.jpg'%}" alt="Lebron" width="200" height="200" style="float:center"></td>
         <td><a href="./disco1.html" style="text-decoration:none; color:white">Toteking - Lebron</a></td>
         <td><p style="font-size:50px">14,50€</p></td>
-        <td><img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></td>
+        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
       </tr>
       <tr>
-        <td><img src="ElCirculo.JPG" alt="ElCirculo" width="200" height="200" style="float:center"></td>
+        <td><img src="{% static 'ElCirculo.JPG'%}" alt="ElCirculo" width="200" height="200" style="float:center"></td>
         <td><a href="./disco2.html" style="text-decoration:none; color:white">Kase.O - El círculo</a></td>
         <td><p style="font-size:50px">15,99€</p></td>
-        <td><img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></td>
+        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
       </tr>
       <tr>
-        <td><img src="Hate.JPG" alt="Hate" width="200" height="200" style="float:center"></td>
+        <td><img src="{% static 'Hate.JPG'%}" alt="Hate" width="200" height="200" style="float:center"></td>
         <td><a href="./disco3.html" style="text-decoration:none; color:white">Sho Hai - La última función</a></td>
         <td><p style="font-size:50px">14,95€</p></td>
-        <td><img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></td>
+        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
       </tr>
     </table>
   </body>

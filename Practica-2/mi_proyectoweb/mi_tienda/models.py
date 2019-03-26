@@ -10,7 +10,7 @@ class Lebron (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Circulo (models.Model):
     name = models.CharField(max_length=200)
@@ -18,7 +18,7 @@ class Circulo (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Funcion (models.Model):
     name = models.CharField(max_length=200)
@@ -26,7 +26,7 @@ class Funcion (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Metamorfosis (models.Model):
     name = models.CharField(max_length=200)
@@ -34,7 +34,7 @@ class Metamorfosis (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Teriyaki (models.Model):
     name = models.CharField(max_length=200)
@@ -42,7 +42,7 @@ class Teriyaki (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Langui (models.Model):
     name = models.CharField(max_length=200)
@@ -50,7 +50,7 @@ class Langui (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Concord (models.Model):
     name = models.CharField(max_length=200)
@@ -58,7 +58,7 @@ class Concord (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Infrared (models.Model):
     name = models.CharField(max_length=200)
@@ -66,7 +66,7 @@ class Infrared (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)
 
 class Noventa (models.Model):
     name = models.CharField(max_length=200)
@@ -74,4 +74,4 @@ class Noventa (models.Model):
     price = models.FloatField()
 
     def __str__(self):
-        return (self.nombre)
+        return (self.name)

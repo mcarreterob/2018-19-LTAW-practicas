@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,8 +21,8 @@
     </ul>
     <table style="width:80%;text-align:center; margin-left:100px">
       <tr>
-        <td><img src="ElCirculo.jpg" alt="ElCirculo" width="450" height="450" style="float:center">
-          <p style="font-size:50px">15,99€   <img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></p></td>
+        <td><img src="{% static 'ElCirculo.JPG'%}" alt="ElCirculo" width="450" height="450" style="float:center">
+          <p style="font-size:50px">15,99€   <img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></p></td>
         <td><p style="font-size:20px; margin-left:30px">Un año después de su vuelta al panorama
           con "Previo", aquel maxi single cuya portada era un boceto en blanco y negro, KASE.O
           saca al mercado su última superproducción musical titulada "El Círculo". El boceto se
@@ -32,7 +34,7 @@
           Tracklist:<br>
           1. Intro (El Círculo)
             <audio controls>
-              <source src="Intro.mp3" type="audio/mpeg">
+              <source src="{% static 'Intro.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           2. Esto No Para<br>
@@ -41,7 +43,7 @@
           5. Guapo Tarde<br>
           6. Viejos Ciegos con Xhelazz & Sho-Hai
             <audio controls>
-              <source src="ViejosCiegos.mp3" type="audio/mpeg">
+              <source src="{% static 'ViejosCiegos.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           7. Interludio Quieren Copiar<br>
@@ -55,7 +57,7 @@
           15. Repartiendo Arte<br>
           16. Basureta (Tiempos Raros)
             <audio controls>
-              <source src="Basureta.mp3" type="audio/mpeg">
+              <source src="{% static 'Basureta.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           17. Outro</p></td>

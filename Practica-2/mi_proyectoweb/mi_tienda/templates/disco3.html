@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,8 +21,8 @@
     </ul>
     <table style="width:80%;text-align:center; margin-left:100px">
       <tr>
-        <td><img src="Hate.jpg" alt="Hate" width="450" height="450" style="float:center">
-          <p style="font-size:50px">14,95€   <img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></p></td>
+        <td><img src="{% static 'Hate.JPG'%}" alt="Hate" width="450" height="450" style="float:center">
+          <p style="font-size:50px">14,95€   <img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></p></td>
         <td><p style="font-size:20px; margin-left:30px">Sho-Hai es miembro fundamental de
           Violadores Del Verso, grupo con el que alcanzó fama mundial, están considerados
           como la formación más importante de Hip Hop en español. Sho-Hai también es conocido
@@ -37,12 +39,12 @@
           6. La Bella Muerte con Kase.O<br>
           7. Polterhate
             <audio controls>
-              <source src="Polterhate.mp3" type="audio/mpeg">
+              <source src="{% static 'Polterhate.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           8. Retrato De Un Retrete
             <audio controls>
-              <source src="RetratoRetrete.mp3" type="audio/mpeg">
+              <source src="{% static 'RetratoRetrete.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           9. Severo Correctivo con Ossian<br>
@@ -52,7 +54,7 @@
           13. Pequeños Lujos con Kase.O<br>
           14. Hablar Por Hablar
             <audio controls>
-              <source src="Hablarxhablar.mp3" type="audio/mpeg">
+              <source src="{% static 'Hablarxhablar.mp3'%}" type="audio/mpeg">
             Your browser does not support the audio element.
             </audio><br>
           15. Dando Brea (Version S.A.) con Soziedad Alkoholika</p></td>

@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mr Dafoe' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Jockey One' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="shop.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'shop.css'%}">
   </head>
   <body>
     <div class="header">
@@ -19,8 +21,8 @@
     </ul>
     <table style="width:90%;text-align:center; margin-left:150px">
       <tr>
-        <td><img src="AM95Infrared.png" alt="AM95" width="640" height="387" style="float:center">
-          <p style="font-size:50px">190€   <img src="carrito.png" alt="carrito" width="64" height="64" style="float:center"></p></td>
+        <td><img src="{% static 'AM95Infrared.png'%}" alt="AM95" width="640" height="387" style="float:center">
+          <p style="font-size:50px">190€   <img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></p></td>
         <td><p style="font-size:20px; margin-left:70px; margin-bottom:20px">La icónica familia Air Max dio
           un paso hacia el futuro con su diseño del 95, el modelo que presentó al mundo las ventanas para
           ver el Air. Las zapatillas incorporaban estas ventanas en el antepié para ofrecer un equilibrio
@@ -30,8 +32,8 @@
           los más codiciados. Descubre este nuevo diseño inspirado en las famosas Air Stab "Runnin' 'n' Gunnin'"
           de 2008 en negro y granito texturado con toques de color infrarrojo.</p>
           <video width="640" height="480" controls>
-            <source src="AM95mp4.mp4" type="video/mp4">
-            <source src="AM95webm.wemb" type="video/webm">
+            <source src="{% static 'AM95mp4.mp4'%}" type="video/mp4">
+            <source src="{% static 'AM95webm.wemb'%}" type="video/webm">
           </video>
         </td>
       </tr>

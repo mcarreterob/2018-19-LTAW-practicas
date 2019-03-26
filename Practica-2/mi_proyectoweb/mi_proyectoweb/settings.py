@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mi_proyectoweb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/github/2018-19-LTAW-practicas/Practica-2/mi_proyectoweb/mi_tienda/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
