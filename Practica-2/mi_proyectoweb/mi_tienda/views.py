@@ -14,7 +14,8 @@ def home_view (request):
     return render(request, "index.html", {'user':'mi cliente preferido'})
 
 def zapatillas_view (request):
-    return render(request, "zapatillas.html", {})
+    zapatillas = Zapatilla.objects.all()
+    return render(request, "zapatillas.html", {'products': zapatillas})
 
 def libros_view (request):
     return render(request, "libros.html", {})
