@@ -20,24 +20,14 @@
       <a href="./zapatillas.html" style="text-decoration:none; color:white"><li>Zapatillas</li></a>
     </ul>
     <table style="width:95%;text-align:center">
-      <tr>
-        <td><img src="{% static 'metamorfosis.jpg'%}" alt="metamorfosis" width="200" height="302" style="float:center"></td>
-        <td><a href="./libro1.html" style="text-decoration:none; color:white">Franz Kafka - La metamorfosis</a></td>
-        <td><p style="font-size:50px">10€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
-      <tr>
-        <td><img src="{% static 'teriyaki.JPG'%}" alt="teriyaki" width="230" height="215" style="float:center"></td>
-        <td><a href="./libro2.html" style="text-decoration:none; color:white">Daniel Rivas (Teriyaki Donut) - Illustrated guide of Air Jordan</a></td>
-        <td><p style="font-size:50px">20€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
-      <tr>
-        <td><img src="{% static 'langui.jpg'%}" alt="langui" width="208" height="304" style="float:center"></td>
-        <td><a href="./libro3.html" style="text-decoration:none; color:white">J.M. Montilla, Langui - 16 escalones antes de irme a la cama</a></td>
-        <td><p style="font-size:50px">6€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
+      {% for product in products %}
+         <tr>
+           <td><img src="{{product.image}}" alt="metamorfosis" width="150" height="220" style="float:center"></td>
+           <td><a href="{{product.file}}" style="text-decoration:none; color:white">{{product.name}}</a></td>
+           <td><p style="font-size:50px">{{product.price}}€</p></td>
+           <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
+         </tr>
+      {% endfor %}
     </table>
   </body>
 </html>

@@ -18,10 +18,12 @@ def zapatillas_view (request):
     return render(request, "zapatillas.html", {'products': zapatillas})
 
 def libros_view (request):
-    return render(request, "libros.html", {})
+    libros = Libro.objects.all()
+    return render(request, "libros.html", {'products': libros})
 
 def discos_view (request):
-    return render(request, "discos.html", {})
+    discos = Disco.objects.all()
+    return render(request, "discos.html", {'products': discos})
 
 # ZAPATILLAS
 def zapatilla1_view (request):

@@ -20,24 +20,14 @@
       <a href="./zapatillas.html" style="text-decoration:none; color:white"><li>Zapatillas</li></a>
     </ul>
     <table style="width:90%;text-align:center">
-      <tr>
-        <td><img src="{% static 'Jordan11Concord.png'%}" alt="Concord" width="200" height="121" style="float:center"></td>
-        <td><a href="./zapa1.html" style="text-decoration:none; color:white">Air Jordan XI Concord (2018)</a></td>
-        <td><p style="font-size:50px">200€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
-      <tr>
-        <td><img src="{% static 'AM90OGInfrared.png'%}" alt="AM90" width="200" height="113" style="float:center"></td>
-        <td><a href="./zapa2.html" style="text-decoration:none; color:white">Air Max 90 Infrared (2015)</a></td>
-        <td><p style="font-size:50px">145€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
-      <tr>
-        <td><img src="{% static 'AM95Infrared.png'%}" alt="AM95" width="197" height="118" style="float:center"></td>
-        <td><a href="./zapa3.html" style="text-decoration:none; color:white">Air Max 95 Infrared (2018)</a></td>
-        <td><p style="font-size:50px">190€</p></td>
-        <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
-      </tr>
+      {% for product in products %}
+         <tr>
+           <td><img src="{{product.image.url}}" alt="Concord" width="200" height="121" style="float:center"></td>
+           <td><a href="{{product.file}}" style="text-decoration:none; color:white">{{product.name}}</a></td>
+           <td><p style="font-size:50px">{{product.price}}€</p></td>
+           <td><img src="{% static 'carrito.png'%}" alt="carrito" width="64" height="64" style="float:center"></td>
+         </tr>
+      {% endfor %}
     </table>
   </body>
 </html>
