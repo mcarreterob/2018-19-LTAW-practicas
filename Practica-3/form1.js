@@ -19,7 +19,6 @@ http.createServer((req, res) => {
     //-- Pagina principal
     case "/":
       content = "Bienvenido a mi tienda "
-
       content = `
         <!DOCTYPE html>
         <html lang="es">
