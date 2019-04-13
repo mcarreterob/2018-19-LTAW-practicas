@@ -12,6 +12,13 @@ function main(){
   //-- Caja con el mensaje a enviar
   var msg = document.getElementById('msg')
 
+  msg.addEventListener("keyup", function(event){
+    if (event.keyCode === 13){
+      event.preventDefault();
+      document.getElementById('send').click();
+    }
+  })
+
   send.onclick = () => {
     //-- Enviamos el mensaje
     socket.emit('new_message', msg.value);
