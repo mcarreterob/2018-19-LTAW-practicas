@@ -12,6 +12,7 @@ function main(){
   //-- Caja con el mensaje a enviar
   var msg = document.getElementById('msg')
 
+  // -- Enviar el mensaje pulsando la tecla ENTER
   msg.addEventListener("keyup", function(event){
     if (event.keyCode === 13){
       event.preventDefault();

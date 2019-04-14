@@ -40,29 +40,24 @@ io.on('connection', function(socket){
     console.log('--> Usuario desconectado');
     clients_number -= 1;
     console.log(clients_number);
-    console.log(disconnected);
-    //console.log(clients);
   });
   //-- Detectar si se ha recibido un mensaje del cliente
   socket.on('new_message', msg => {
     switch (msg) {
-      case '/help':
+      case ' /help':
         msg = 'Help:' + '<br>' + '/list: to know the number of connected users'
               + '<br>' + '/hello: to receive a message from server' + '<br>'
               + '/date: to know the date'
         socket.emit('new_message', msg);
         break;
-      case '/list':
-        console.log('HolaaaaaL');
-        msg = clients_number
+      case ' /list':
+        msg = 'Connected users' + clients_number
         socket.emit('new_message', msg);
         break;
-      case '/hello':
-        console.log('Holaaaaah');
+      case ' /hello':
         socket.emit('new_message', 'Hi! I´m the server');
         break;
-      case '/date':
-        console.log('Holaaaaad');
+      case ' /date':
         var d = new Date();
         var day = d.getDate();
         var month = d.getMonth();
@@ -89,13 +84,12 @@ io.on('connection', function(socket){
           case 6:
             weekday = "Saturday";
         }
-        msg = weekday + ', ' + day + '/' + month + '/' + year
-        socket.emit('new_message', msg);
+        msg = 'Today: ' + weekday + ', ' + day + '/' + month + '/' + year
       default:
+        //-- Se lo envio a todos los clientes conectados
+        io.emit('new_message', msg);
         break;
     }
-      //-- Se lo envio a todos los clientes conectados
-      io.emit('new_message', msg);
       //-- Lo notifico en la consola
       console.log("Mensaje recibido: " + msg);
   })
