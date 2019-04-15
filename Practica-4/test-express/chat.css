@@ -1,0 +1,8 @@
+body {
+  font-family: 'VT323';font-size: 30px;
+  color: black;
+  text-shadow: 3px 3px 17px green;
+  /*background-image: url("red-background.png");
+  background-position: top;
+  background-size: 1920px 1200px;*/
+}

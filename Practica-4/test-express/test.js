@@ -14,6 +14,13 @@ app.get('/', function(req, res){
   console.log("Página principal: /")
 });
 
+//-- Servir el CSS
+app.get('/chat.css', function(req, res){
+  res.sendFile(__dirname + '/chat.css');
+  //res.send('Probando express... ¡¡¡qué fácil!!!')
+  console.log("Fichero de estilo solicitado")
+});
+
 //-- Servir el cliente javascript
 app.get('/chat-client.js', function(req, res){
   res.sendFile(__dirname + '/chat-client.js');
