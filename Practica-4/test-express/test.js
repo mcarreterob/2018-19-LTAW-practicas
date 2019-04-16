@@ -40,25 +40,26 @@ io.on('connection', function(socket){
   console.log('--> Usuario conectado \r\n');
   clients_number += 1;
   console.log(clients_number);
+  socket.emit('new_message', 'Bienvenido amigo <br>');
+  io.emit('new_message', 'Hay un nuevo usuario, bienvenido!<br>');
   //-- Detectar si el usuario se ha desconectado
-  socket.emit('new_message', 'Bienvenido amigo');
-  io.emit('new_message', 'Hay un nuevo usuario, bienvenido!');
   socket.on('disconnect', function(){
     console.log('--> Usuario desconectado');
     clients_number -= 1;
+    io.emit('new_message', 'Se ha desconectado un usuario<br>');
     console.log(clients_number);
   });
   //-- Detectar si se ha recibido un mensaje del cliente
   socket.on('new_message', msg => {
     switch (msg) {
       case ' /help':
-        msg = 'Help:' + '<br>' + '/list: to know the number of connected users'
+        msg = '<br>Help:' + '<br>' + '/list: to know the number of connected users'
               + '<br>' + '/hello: to receive a message from server' + '<br>'
-              + '/date: to know the date'
+              + '/date: to know the date<br>'
         socket.emit('new_message', msg);
         break;
       case ' /list':
-        msg = 'Connected users' + clients_number
+        msg = 'Connected users: ' + clients_number
         socket.emit('new_message', msg);
         break;
       case ' /hello':
