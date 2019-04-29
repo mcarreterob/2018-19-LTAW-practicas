@@ -1,7 +1,7 @@
 function main(){
   console.log("Hola!!!!");
-  //-- Crear un socket.io. Se establece
-  //-- la conexion con el Servidor
+  //-- Crear un socket.io. Se establece la
+  //-- conexion con el Servidor
   var socket = io();
 
   //-- Obtenemos los elementos de interfaz:
