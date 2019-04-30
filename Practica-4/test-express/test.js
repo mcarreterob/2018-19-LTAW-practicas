@@ -68,7 +68,7 @@ io.on('connection', function(socket){
       case ' /date':
         var d = new Date();
         var day = d.getDate();
-        var month = d.getMonth();
+        var month = d.getMonth() + 1;
         var year = d.getFullYear();
         switch (new Date().getDay()) {
           case 0:
