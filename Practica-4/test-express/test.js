@@ -41,7 +41,7 @@ io.on('connection', function(socket){
   clients_number += 1;
   console.log(clients_number);
   socket.emit('new_message', 'Bienvenido amigo <br>');
-  io.emit('new_message', 'Hay un nuevo usuario, bienvenido!<br>');
+  socket.broadcast.emit('new_message', 'Hay un nuevo usuario, bienvenido!<br>');
   //-- Detectar si el usuario se ha desconectado
   socket.on('disconnect', function(){
     console.log('--> Usuario desconectado');
@@ -93,6 +93,7 @@ io.on('connection', function(socket){
             weekday = "Saturday";
         }
         msg = 'Today: ' + weekday + ', ' + day + '/' + month + '/' + year
+        socket.emit('new_message', msg);
       default:
         //-- Se lo envio a todos los clientes conectados
         io.emit('new_message', msg);
@@ -100,5 +101,6 @@ io.on('connection', function(socket){
     }
       //-- Lo notifico en la consola
       console.log("Mensaje recibido: " + msg);
+      console.log(socket.id);
   })
 });
