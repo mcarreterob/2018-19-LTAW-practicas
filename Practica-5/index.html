@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MI CHAT</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="chat-client.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="chat.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+      integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+      crossorigin='anonymous'>
+  </head>
+  <body onload="main();">
+    <h1>-DEEP CHAT-</h1>
+    <p>Write your message here...</p>
+    <i style='font-size:25px; padding-right: 5px' class='far'>&#xf11c;</i>
+    <input id="msg" autocomplete="off"/>
+    <button class="button" type="button" id="send">SEND</button>
+    <div class="messages">
+        <p id="display"></p>
+    </div>
+  </body>
+</html>
