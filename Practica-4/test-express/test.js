@@ -6,6 +6,7 @@ var io = require('socket.io')(http);
 const PORT = 3000
 
 var clients_number = 0;
+var clients_name = [];
 
 //-- Punto de entrada pricipal
 app.get('/', function(req, res){
@@ -40,8 +41,11 @@ io.on('connection', function(socket){
   console.log('--> Usuario conectado \r\n');
   clients_number += 1;
   console.log(clients_number);
-  socket.emit('new_message', 'Bienvenido amigo <br>');
-  socket.broadcast.emit('new_message', 'Hay un nuevo usuario, bienvenido!<br>');
+  socket.on('new_name', user_name =>{
+     clients_name += user_name + ',' + '\n';
+     socket.emit('new_message', 'Bienvenido ' + user_name + '<br>');
+     socket.broadcast.emit('new_message', 'Hay un nuevo usuario, bienvenido ' + user_name + '!<br>');
+  })
   //-- Detectar si el usuario se ha desconectado
   socket.on('disconnect', function(){
     console.log('--> Usuario desconectado');
@@ -51,21 +55,22 @@ io.on('connection', function(socket){
   });
   //-- Detectar si se ha recibido un mensaje del cliente
   socket.on('new_message', msg => {
-    switch (msg) {
-      case ' /help':
+    command = msg.split(" ")[1]
+    switch (command) {
+      case '/help':
         msg = '<br>Help:' + '<br>' + '/list: to know the number of connected users'
               + '<br>' + '/hello: to receive a message from server' + '<br>'
               + '/date: to know the date<br>'
         socket.emit('new_message', msg);
         break;
-      case ' /list':
+      case '/list':
         msg = 'Connected users: ' + clients_number
         socket.emit('new_message', msg);
         break;
-      case ' /hello':
+      case '/hello':
         socket.emit('new_message', 'Hi! I´m the server');
         break;
-      case ' /date':
+      case '/date':
         var d = new Date();
         var day = d.getDate();
         var month = d.getMonth() + 1;
@@ -92,8 +97,9 @@ io.on('connection', function(socket){
           case 6:
             weekday = "Saturday";
         }
-        msg = 'Today: ' + weekday + ', ' + day + '/' + month + '/' + year
-        socket.emit('new_message', msg);
+        date = 'Today: ' + weekday + ', ' + day + '/' + month + '/' + year
+        socket.emit('new_message', date);
+        break;
       default:
         //-- Se lo envio a todos los clientes conectados
         io.emit('new_message', msg);
@@ -101,6 +107,6 @@ io.on('connection', function(socket){
     }
       //-- Lo notifico en la consola
       console.log("Mensaje recibido: " + msg);
-      console.log(socket.id);
+      //console.log(socket.id);
   })
 });
